@@ -1,2 +1,5 @@
 ﻿  ToSearchFile.cpp
-  SearchFileLibrary.vcxproj -> D:\Repos\GlobalLogicTest\SearchFileLibrary\x64\Debug\SearchFileLibrary.lib
+D:\Repos\SearchFileLibrary\SearchFileLibrary\ToSearchFile.cpp(83): warning C4715: 'SearchFile::ToSearchFile::SearchForFile': not all control paths return a value
+D:\Repos\SearchFileLibrary\SearchFileLibrary\ToSearchFile.cpp(41): warning C4715: 'SearchFile::ToSearchFile::__checkSubDirectory': not all control paths return a value
+D:\Repos\SearchFileLibrary\SearchFileLibrary\ToSearchFile.cpp(64): warning C4715: 'SearchFile::ToSearchFile::__checkSubDirectory': not all control paths return a value
+  SearchFileLibrary.vcxproj -> D:\Repos\SearchFileLibrary\x64\Debug\SearchFileLibrary.lib

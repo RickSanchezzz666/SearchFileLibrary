@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Repos\GlobalLogicTest\SearchFileLibrary\x64\Debug\SearchFileApp.exe</FullPath>
+      <FullPath>D:\Repos\SearchFileLibrary\x64\Debug\SearchFileApp.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
