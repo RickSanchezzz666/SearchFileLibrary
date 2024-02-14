@@ -5,7 +5,6 @@
 #include "../SearchFileLibrary/ToSearchFile.hpp"
 
 int main() {
-	std::filesystem::path finalPath = SearchFile::ToSearchFile::SearchForFile("Adobe");
-    std::cout << finalPath ? "\nFile was found!" : "\nFile not found!";
+	std::filesystem::path finalPath = SearchFile::ToSearchFile::SearchForFile("nig");
 	return 0;
 }
