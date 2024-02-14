@@ -1,5 +1,6 @@
 #include "ToSearchFile.hpp"
 
+#include <string>
 #include <iostream>
 #include <filesystem>
 #include <thread>
@@ -163,9 +164,7 @@ namespace SearchFile {
             fs::path filePath = __checkInitialDirectory(fileName, foundStatus, rootDir, directories);
 
             //if (!foundStatus) __createThread(directories, filePath, fileName, foundStatus);
-            if (!foundStatus) {
-                __checkSubDirectory(fileName, filePath, foundStatus, directories);
-            }
+            if (!foundStatus) __checkSubDirectory(fileName, filePath, foundStatus, directories);
 
             if (foundStatus) std::cout << "\nSuccesfully found file: '" << fileName << "'!\n" << "Path to this file " << filePath << "!\n";
             else std::cout << "\nFile: '" << fileName << "' was not found!";
@@ -173,7 +172,6 @@ namespace SearchFile {
             return filePath;
         }
         catch (const std::filesystem::filesystem_error& e) {
-            std::cout << "Error: " << e.what() << std::endl;
             std::string result;
             std::string str = e.what();
             size_t startPos = str.find("\"");
@@ -187,6 +185,4 @@ namespace SearchFile {
             SearchForFile(fileName);
         }
 	}
-        
-    
 }

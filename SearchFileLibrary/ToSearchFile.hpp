@@ -1,8 +1,11 @@
 #pragma once
-#include <string>
 
+#include <string>
+#include <iostream>
 #include <filesystem>
 #include <thread>
+#include <vector>
+#include <atomic>
 #include <mutex>
 
 namespace fs = std::filesystem;
@@ -18,10 +21,8 @@ namespace SearchFile {
 
         static bool __checkIfFolderIsAvailable(const fs::directory_entry& directory);
 
-        static void __createThread(std::vector<std::string>& directories, fs::path& filePath, const std::string& fileName, bool& status);
-        
-        static fs::path __startSearching(std::vector<std::string>& directories, fs::path& filePath, const std::string& fileName, bool& foundStatus);
-
+        //static void __createThread(std::vector<std::string>& directories, fs::path& filePath, const std::string& fileName, bool& status);
+       
         static void __checkDeepDirectory(const std::string& fileName, fs::path& filePath, bool& status, const std::string& directories);
         static void __checkSubDirectory(const std::string& fileName, fs::path& filePath, bool& status, const std::vector<std::string>& directories);
 	public:

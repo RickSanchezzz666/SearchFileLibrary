@@ -1,0 +1,10 @@
+{
+    "makefile.makefilePath": "D:\\Repos\\SearchFileLibrary\\Makefile",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "d:\\Repos\\SearchFileLibrary",
+            "binaryPath": "d:\\Repos\\SearchFileLibrary\\app.exe",
+            "binaryArgs": []
+        }
+    ]
+}

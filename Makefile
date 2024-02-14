@@ -1,17 +1,23 @@
 CC = g++
-CFLAGS = -std=c++17 -Wall
-LIBS = -lpthread -lc++fs
+
+CXXFLAGS = -std=c++17
+
+LIBS = -lstdc++fs -lpthread -latomic
+
+OBJECTS = main.o ToSearchFile.o
+
+TARGET = app.exe
 
 all: app
 
-app: SearchFileApp/main.o SearchFileLibrary/ToSearchFile.o
-    $(CC) $(CFLAGS) -o app SearchFileApp/main.o SearchFileLibrary/ToSearchFile.o $(LIBS)
+app: $(OBJECTS)
+	$(CC) $(OBJECTS) $(LIBS) -o $(TARGET)
 
-SearchFileLibrary/ToSearchFile.o: SearchFileLibrary/ToSearchFile.cpp SearchFileLibrary/ToSearchFile.hpp
-    $(CC) $(CFLAGS) -c SearchFileLibrary/ToSearchFile.cpp -o SearchFileLibrary/ToSearchFile.o
+main.o: SearchFileApp/main.cpp
+	$(CC) $(CXXFLAGS) -c SearchFileApp/main.cpp -o main.o
 
-SearchFileApp/main.o: SearchFileApp/main.cpp
-    $(CC) $(CFLAGS) -c SearchFileApp/main.cpp -o SearchFileApp/main.o
+ToSearchFile.o: SearchFileLibrary/ToSearchFile.cpp SearchFileLibrary/ToSearchFile.hpp
+	$(CC) $(CXXFLAGS) -c SearchFileLibrary/ToSearchFile.cpp -o ToSearchFile.o
 
 clean:
-    rm -f SearchFileApp/*.o SearchFileLibrary/*.o app
+	rm -f $(OBJECTS) $(TARGET)
